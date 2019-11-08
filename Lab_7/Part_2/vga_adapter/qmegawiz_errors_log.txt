@@ -1,0 +1,19 @@
+
+
+C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_2/vga_adapter/vga_pll.v
+
+Nov 01 09PM:56:44>: Error in CNX file format.
+
+Error messages are listed in file
+C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_2/vga_adapter/vga_pll.cnxerr.
+
+Can't create the custom megafunction variation file(s)
+
+C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_2/vga_adapter/vga_pll.v
+
+Nov 01 09PM:58:14>: Error in CNX file format.
+
+Error messages are listed in file
+C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_2/vga_adapter/vga_pll.cnxerr.
+
+Can't create the custom megafunction variation file(s)

@@ -1,0 +1,91 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_2
+vcontrol
+Z1 !s110 1572766816
+!i10b 1
+!s100 @2@5lZoD@@10I3dl3WfL21
+I9>bWz5bIVIJ<eEm0IgK9C1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1572764792
+Z4 8fill.v
+Z5 Ffill.v
+L0 116
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1572766816.000000
+Z8 !s107 fill.v|
+Z9 !s90 -reportprogress|300|fill.v|
+!i113 1
+Z10 tCvgOpt 0
+vdatapath
+R1
+!i10b 1
+!s100 Kk<=]h2HYEkW`_YR180Z12
+IhQzYSgS29fQJnaNTC1dnP0
+R2
+R0
+R3
+R4
+R5
+L0 202
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vfill
+R1
+!i10b 1
+!s100 QMkWRRM8FE8KU9ec[M@RQ2
+I`IJd[1eb;M;YB2_PjIC=Q1
+R2
+R0
+R3
+R4
+R5
+L0 3
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vFSM
+!s110 1572678906
+!i10b 1
+!s100 fb6RcdMdM7I^l0R:mW66`0
+IS6`:SO_YO`:L^mZF<h2dc0
+R2
+R0
+w1572678904
+R4
+R5
+L0 75
+R6
+r1
+!s85 0
+31
+!s108 1572678906.000000
+R8
+!s90 fill.v|
+!i113 1
+R10
+n@f@s@m
