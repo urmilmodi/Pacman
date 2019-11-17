@@ -2,7 +2,7 @@ module main
     (
         CLOCK_50,                        //    On Board 50 MHz
         // The ports below are for the VGA output.  Do not change.
-        SW,
+        SW, LEDR,
         VGA_CLK,                           //    VGA Clock
         VGA_HS,                            //    VGA H_SYNC
         VGA_VS,                            //    VGA V_SYNC
@@ -15,6 +15,7 @@ module main
 
     input              CLOCK_50;                //    50 MHz
     input     [9:0]    SW;
+	 output    [2:0]    LEDR;
     // Do not change the following outputs
     output             VGA_CLK;                   //    VGA Clock
     output             VGA_HS;                    //    VGA H_SYNC
@@ -25,7 +26,7 @@ module main
     output    [7:0]    VGA_G;                     //    VGA Green[7:0]
     output    [7:0]    VGA_B;                   //    VGA Blue[7:0]
     
-    reg [2:0] clr = 3'b001;
+    reg [2:0] clr = 3'b110;
     reg [6:0] xin = 7'd0;
     reg [6:0] yin = 7'd0;
     reg rx = 1'b0;
@@ -44,6 +45,7 @@ module main
     wire [26:0] timer = 27'b000000001100101101110011010; // 1/120 sec count (120Hz)
     reg [26:0] counter;
     
+    
      // Generate 120Hz Pulse
     assign pulse = (counter == 27'b0) ? 1'b1 : 1'b0;
     always@(posedge CLOCK_50) begin
@@ -54,7 +56,7 @@ module main
     end
     
     always @(posedge pulse) begin
-        if (erasecounter >= 7'b11)
+        if (erasecounter >= SW[9:3])
             erasecounter <= 7'b0;
         else
             erasecounter <= erasecounter + 1;
@@ -187,7 +189,7 @@ module main
         .colour(colour),
         .cout(DataColour),
         .xout(x),
-        .yout(y)
+        .yout(y), .LEDR(LEDR)
     );
 endmodule
 
@@ -277,7 +279,7 @@ always @(*)
 endmodule 
 
 
-module datapath(lx, ly, lc, lb, xin, yin, enable, plot, resetn, clk, xout, yout, colour, cout);
+module datapath(lx, ly, lc, lb, xin, yin, enable, plot, resetn, clk, xout, yout, colour, cout, LEDR);
 
     input clk;
     input resetn;
@@ -287,6 +289,7 @@ module datapath(lx, ly, lc, lb, xin, yin, enable, plot, resetn, clk, xout, yout,
     input ly; 
     input lc;
     input lb;
+	 output reg [2:0] LEDR;
 
     input [2:0] colour;
     input [6:0] xin;
@@ -318,6 +321,11 @@ module datapath(lx, ly, lc, lb, xin, yin, enable, plot, resetn, clk, xout, yout,
                 regcolour <= colour;
         end
     end
+	 
+	 wire [2:0] ramout;
+	 
+	 ram u (.address(counterBlack), .clock(clk), .q(ramout), .data(15'b0), .wren(1'b0));
+	 
         
     always@ (posedge clk) begin
         
@@ -325,7 +333,8 @@ module datapath(lx, ly, lc, lb, xin, yin, enable, plot, resetn, clk, xout, yout,
             counterBlack <= counterBlack + 1'b1;
             xout <= counterBlack[7:0];
             yout <= counterBlack[14:8];
-            cout <= 3'b000;
+            cout <= ramout;
+				LEDR[2:0] <= ramout;
         end
         else begin
             if (plot)

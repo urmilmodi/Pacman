@@ -1,4 +1,6 @@
-module Blinky(pacloc, pacfacing, blinkyloc, currentloc, mode, rotate, update, currentfacing, WallsVector, NoFacingUpVector, nextfacing, nextloc);
+`timescale 1ns / 1ns
+ 
+module Inky(pacloc, pacfacing, blinkyloc, currentloc, mode, rotate, update, currentfacing, WallsVector, NoFacingUpVector, nextfacing, nextloc);
     
     input [15:0] pacloc;
     input [15:0] pacfacing;

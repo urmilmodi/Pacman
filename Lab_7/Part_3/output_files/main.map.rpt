@@ -1,5 +1,5 @@
 Analysis & Synthesis report for main
-Sun Nov 03 21:50:24 2019
+Thu Nov 14 00:51:26 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -14,29 +14,32 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
-  9. State Machine - |main|control:C0|current_state
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |main|control:C0|current_state
+ 11. Registers Removed During Synthesis
  12. General Register Statistics
  13. Inverted Register Statistics
  14. Multiplexer Restructuring Statistics (Restructuring Performed)
  15. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated
- 16. Parameter Settings for User Entity Instance: vga_adapter:VGA
- 17. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_address_translator:user_input_translator
- 18. Parameter Settings for User Entity Instance: vga_adapter:VGA|altsyncram:VideoMemory
- 19. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component
- 20. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller
- 21. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator
- 22. altsyncram Parameter Settings by Entity Instance
- 23. altpll Parameter Settings by Entity Instance
- 24. Port Connectivity Checks: "datapath:D0"
- 25. Port Connectivity Checks: "control:C0"
- 26. Port Connectivity Checks: "vga_adapter:VGA|vga_controller:controller"
- 27. Port Connectivity Checks: "vga_adapter:VGA"
- 28. Post-Synthesis Netlist Statistics for Top Partition
- 29. Elapsed Time Per Partition
- 30. Analysis & Synthesis Messages
- 31. Analysis & Synthesis Suppressed Messages
+ 16. Source assignments for datapath:D0|ram:u|altsyncram:altsyncram_component|altsyncram_qdo1:auto_generated
+ 17. Parameter Settings for User Entity Instance: vga_adapter:VGA
+ 18. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_address_translator:user_input_translator
+ 19. Parameter Settings for User Entity Instance: vga_adapter:VGA|altsyncram:VideoMemory
+ 20. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component
+ 21. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller
+ 22. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator
+ 23. Parameter Settings for User Entity Instance: datapath:D0|ram:u|altsyncram:altsyncram_component
+ 24. altsyncram Parameter Settings by Entity Instance
+ 25. altpll Parameter Settings by Entity Instance
+ 26. Port Connectivity Checks: "datapath:D0|ram:u"
+ 27. Port Connectivity Checks: "datapath:D0"
+ 28. Port Connectivity Checks: "control:C0"
+ 29. Port Connectivity Checks: "vga_adapter:VGA|vga_controller:controller"
+ 30. Port Connectivity Checks: "vga_adapter:VGA"
+ 31. Post-Synthesis Netlist Statistics for Top Partition
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
+ 34. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -62,16 +65,16 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Nov 03 21:50:24 2019       ;
+; Analysis & Synthesis Status     ; Successful - Thu Nov 14 00:51:26 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; main                                        ;
 ; Top-level Entity Name           ; main                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 142                                         ;
-; Total pins                      ; 40                                          ;
+; Total registers                 ; 149                                         ;
+; Total pins                      ; 43                                          ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 57,600                                      ;
+; Total block memory bits         ; 115,200                                     ;
 ; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -182,41 +185,43 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                               ;
-+--------------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path     ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                                             ; Library ;
-+--------------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
-; mainusb.v                            ; yes             ; User Verilog HDL File                  ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/mainusb.v                            ;         ;
-; vga_adapter/vga_pll.v                ; yes             ; User Wizard-Generated File             ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/vga_adapter/vga_pll.v                ;         ;
-; vga_adapter/vga_controller.v         ; yes             ; User Verilog HDL File                  ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/vga_adapter/vga_controller.v         ;         ;
-; vga_adapter/vga_address_translator.v ; yes             ; User Verilog HDL File                  ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/vga_adapter/vga_address_translator.v ;         ;
-; vga_adapter/vga_adapter.v            ; yes             ; User Verilog HDL File                  ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/vga_adapter/vga_adapter.v            ;         ;
-; main.v                               ; yes             ; User Verilog HDL File                  ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/main.v                               ;         ;
-; altsyncram.tdf                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf                                                    ;         ;
-; stratix_ram_block.inc                ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                             ;         ;
-; lpm_mux.inc                          ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc                                                       ;         ;
-; lpm_decode.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc                                                    ;         ;
-; aglobal181.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                                                    ;         ;
-; a_rdenreg.inc                        ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                     ;         ;
-; altrom.inc                           ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc                                                        ;         ;
-; altram.inc                           ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc                                                        ;         ;
-; altdpram.inc                         ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                                                      ;         ;
-; db/altsyncram_m6m1.tdf               ; yes             ; Auto-Generated Megafunction            ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/db/altsyncram_m6m1.tdf               ;         ;
-; black.mif                            ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/black.mif                            ;         ;
-; db/decode_7la.tdf                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/db/decode_7la.tdf                    ;         ;
-; db/decode_01a.tdf                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/db/decode_01a.tdf                    ;         ;
-; db/mux_ifb.tdf                       ; yes             ; Auto-Generated Megafunction            ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/db/mux_ifb.tdf                       ;         ;
-; altpll.tdf                           ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf                                                        ;         ;
-; stratix_pll.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_pll.inc                                                   ;         ;
-; stratixii_pll.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratixii_pll.inc                                                 ;         ;
-; cycloneii_pll.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/cycloneii_pll.inc                                                 ;         ;
-; db/altpll_80u.tdf                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/db/altpll_80u.tdf                    ;         ;
-+--------------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                 ;
++--------------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path     ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                                               ; Library ;
++--------------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+---------+
+; vga_adapter/vga_pll.v                ; yes             ; User Wizard-Generated File             ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/vga_adapter/vga_pll.v                ;         ;
+; vga_adapter/vga_controller.v         ; yes             ; User Verilog HDL File                  ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/vga_adapter/vga_controller.v         ;         ;
+; vga_adapter/vga_address_translator.v ; yes             ; User Verilog HDL File                  ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/vga_adapter/vga_address_translator.v ;         ;
+; vga_adapter/vga_adapter.v            ; yes             ; User Verilog HDL File                  ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/vga_adapter/vga_adapter.v            ;         ;
+; main.v                               ; yes             ; User Verilog HDL File                  ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/main.v                               ;         ;
+; ram.v                                ; yes             ; User Wizard-Generated File             ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/ram.v                                ;         ;
+; altsyncram.tdf                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf                                                      ;         ;
+; stratix_ram_block.inc                ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                               ;         ;
+; lpm_mux.inc                          ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc                                                         ;         ;
+; lpm_decode.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc                                                      ;         ;
+; aglobal181.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                                                      ;         ;
+; a_rdenreg.inc                        ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                       ;         ;
+; altrom.inc                           ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc                                                          ;         ;
+; altram.inc                           ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc                                                          ;         ;
+; altdpram.inc                         ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                                                        ;         ;
+; db/altsyncram_m6m1.tdf               ; yes             ; Auto-Generated Megafunction            ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/db/altsyncram_m6m1.tdf               ;         ;
+; black.mif                            ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/black.mif                            ;         ;
+; db/decode_7la.tdf                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/db/decode_7la.tdf                    ;         ;
+; db/decode_01a.tdf                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/db/decode_01a.tdf                    ;         ;
+; db/mux_ifb.tdf                       ; yes             ; Auto-Generated Megafunction            ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/db/mux_ifb.tdf                       ;         ;
+; altpll.tdf                           ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf                                                          ;         ;
+; stratix_pll.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_pll.inc                                                     ;         ;
+; stratixii_pll.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratixii_pll.inc                                                   ;         ;
+; cycloneii_pll.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/cycloneii_pll.inc                                                   ;         ;
+; db/altpll_80u.tdf                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/db/altpll_80u.tdf                    ;         ;
+; db/altsyncram_qdo1.tdf               ; yes             ; Auto-Generated Megafunction            ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/db/altsyncram_qdo1.tdf               ;         ;
++--------------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -224,20 +229,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 105            ;
+; Estimate of Logic utilization (ALMs needed) ; 111            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 187            ;
+; Combinational ALUT usage for logic          ; 197            ;
 ;     -- 7 input functions                    ; 0              ;
-;     -- 6 input functions                    ; 19             ;
-;     -- 5 input functions                    ; 19             ;
-;     -- 4 input functions                    ; 9              ;
-;     -- <=3 input functions                  ; 140            ;
+;     -- 6 input functions                    ; 22             ;
+;     -- 5 input functions                    ; 23             ;
+;     -- 4 input functions                    ; 10             ;
+;     -- <=3 input functions                  ; 142            ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 142            ;
+; Dedicated logic registers                   ; 149            ;
 ;                                             ;                ;
-; I/O pins                                    ; 40             ;
+; I/O pins                                    ; 43             ;
 ; Total MLAB memory bits                      ; 0              ;
-; Total block memory bits                     ; 57600          ;
+; Total block memory bits                     ; 115200         ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
@@ -245,43 +250,58 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 92             ;
-; Total fan-out                               ; 1348           ;
-; Average fan-out                             ; 3.22           ;
+; Maximum fan-out                             ; 108            ;
+; Total fan-out                               ; 1579           ;
+; Average fan-out                             ; 3.50           ;
 +---------------------------------------------+----------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                             ;
-+---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; Compilation Hierarchy Node                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                  ; Entity Name            ; Library Name ;
-+---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; |main                                                   ; 187 (84)            ; 142 (57)                  ; 57600             ; 0          ; 40   ; 0            ; |main                                                                                                ; main                   ; work         ;
-;    |control:C0|                                         ; 5 (5)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |main|control:C0                                                                                     ; control                ; work         ;
-;    |datapath:D0|                                        ; 35 (35)             ; 49 (49)                   ; 0                 ; 0          ; 0    ; 0            ; |main|datapath:D0                                                                                    ; datapath               ; work         ;
-;    |vga_adapter:VGA|                                    ; 63 (2)              ; 30 (0)                    ; 57600             ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA                                                                                ; vga_adapter            ; work         ;
-;       |altsyncram:VideoMemory|                          ; 9 (0)               ; 4 (0)                     ; 57600             ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA|altsyncram:VideoMemory                                                         ; altsyncram             ; work         ;
-;          |altsyncram_m6m1:auto_generated|               ; 9 (0)               ; 4 (4)                     ; 57600             ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated                          ; altsyncram_m6m1        ; work         ;
-;             |decode_01a:rden_decode_b|                  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_01a:rden_decode_b ; decode_01a             ; work         ;
-;             |decode_7la:decode2|                        ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_7la:decode2       ; decode_7la             ; work         ;
-;             |mux_ifb:mux3|                              ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3             ; mux_ifb                ; work         ;
-;       |vga_address_translator:user_input_translator|    ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA|vga_address_translator:user_input_translator                                   ; vga_address_translator ; work         ;
-;       |vga_controller:controller|                       ; 42 (32)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA|vga_controller:controller                                                      ; vga_controller         ; work         ;
-;          |vga_address_translator:controller_translator| ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator         ; vga_address_translator ; work         ;
-;       |vga_pll:mypll|                                   ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA|vga_pll:mypll                                                                  ; vga_pll                ; work         ;
-;          |altpll:altpll_component|                      ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component                                          ; altpll                 ; work         ;
-;             |altpll_80u:auto_generated|                 ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated                ; altpll_80u             ; work         ;
-+---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+------------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                      ;
++---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------+------------------------+--------------+
+; Compilation Hierarchy Node                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                           ; Entity Name            ; Library Name ;
++---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------+------------------------+--------------+
+; |main                                                   ; 197 (89)            ; 149 (57)                  ; 115200            ; 0          ; 43   ; 0            ; |main                                                                                                         ; main                   ; work         ;
+;    |control:C0|                                         ; 5 (5)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |main|control:C0                                                                                              ; control                ; work         ;
+;    |datapath:D0|                                        ; 40 (34)             ; 56 (54)                   ; 57600             ; 0          ; 0    ; 0            ; |main|datapath:D0                                                                                             ; datapath               ; work         ;
+;       |ram:u|                                           ; 6 (0)               ; 2 (0)                     ; 57600             ; 0          ; 0    ; 0            ; |main|datapath:D0|ram:u                                                                                       ; ram                    ; work         ;
+;          |altsyncram:altsyncram_component|              ; 6 (0)               ; 2 (0)                     ; 57600             ; 0          ; 0    ; 0            ; |main|datapath:D0|ram:u|altsyncram:altsyncram_component                                                       ; altsyncram             ; work         ;
+;             |altsyncram_qdo1:auto_generated|            ; 6 (0)               ; 2 (2)                     ; 57600             ; 0          ; 0    ; 0            ; |main|datapath:D0|ram:u|altsyncram:altsyncram_component|altsyncram_qdo1:auto_generated                        ; altsyncram_qdo1        ; work         ;
+;                |decode_01a:rden_decode|                 ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|datapath:D0|ram:u|altsyncram:altsyncram_component|altsyncram_qdo1:auto_generated|decode_01a:rden_decode ; decode_01a             ; work         ;
+;                |mux_ifb:mux2|                           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|datapath:D0|ram:u|altsyncram:altsyncram_component|altsyncram_qdo1:auto_generated|mux_ifb:mux2           ; mux_ifb                ; work         ;
+;    |vga_adapter:VGA|                                    ; 63 (2)              ; 30 (0)                    ; 57600             ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA                                                                                         ; vga_adapter            ; work         ;
+;       |altsyncram:VideoMemory|                          ; 9 (0)               ; 4 (0)                     ; 57600             ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA|altsyncram:VideoMemory                                                                  ; altsyncram             ; work         ;
+;          |altsyncram_m6m1:auto_generated|               ; 9 (0)               ; 4 (4)                     ; 57600             ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated                                   ; altsyncram_m6m1        ; work         ;
+;             |decode_01a:rden_decode_b|                  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_01a:rden_decode_b          ; decode_01a             ; work         ;
+;             |decode_7la:decode2|                        ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_7la:decode2                ; decode_7la             ; work         ;
+;             |mux_ifb:mux3|                              ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3                      ; mux_ifb                ; work         ;
+;       |vga_address_translator:user_input_translator|    ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA|vga_address_translator:user_input_translator                                            ; vga_address_translator ; work         ;
+;       |vga_controller:controller|                       ; 42 (32)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA|vga_controller:controller                                                               ; vga_controller         ; work         ;
+;          |vga_address_translator:controller_translator| ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator                  ; vga_address_translator ; work         ;
+;       |vga_pll:mypll|                                   ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA|vga_pll:mypll                                                                           ; vga_pll                ; work         ;
+;          |altpll:altpll_component|                      ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component                                                   ; altpll                 ; work         ;
+;             |altpll_80u:auto_generated|                 ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated                         ; altpll_80u             ; work         ;
++---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------+------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                           ;
-+----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-----------+
-; Name                                                                             ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF       ;
-+----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-----------+
-; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 19200        ; 3            ; 19200        ; 3            ; 57600 ; black.mif ;
-+----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-----------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                      ;
++---------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-----------+
+; Name                                                                                        ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF       ;
++---------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-----------+
+; datapath:D0|ram:u|altsyncram:altsyncram_component|altsyncram_qdo1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port      ; 19200        ; 3            ; --           ; --           ; 57600 ; black.mif ;
+; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|ALTSYNCRAM            ; AUTO ; Simple Dual Port ; 19200        ; 3            ; 19200        ; 3            ; 57600 ; black.mif ;
++---------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                     ;
++--------+--------------+---------+--------------+--------------+-------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance         ; IP Include File ;
++--------+--------------+---------+--------------+--------------+-------------------------+-----------------+
+; Altera ; RAM: 1-PORT  ; 18.1    ; N/A          ; N/A          ; |main|datapath:D0|ram:u ; ram.v           ;
++--------+--------------+---------+--------------+--------------+-------------------------+-----------------+
 
 
 Encoding Type:  One-Hot
@@ -299,33 +319,21 @@ Encoding Type:  One-Hot
 +-----------------------------+----------------------+-----------------------+-----------------------------+------------------------+-----------------------------+------------------------+
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; datapath:D0|regcolour[0]               ; Stuck at VCC due to stuck port data_in ;
-; datapath:D0|regcolour[1,2]             ; Stuck at GND due to stuck port data_in ;
-; datapath:D0|Xorigin[7]                 ; Stuck at GND due to stuck port data_in ;
-; clk                                    ; Merged with go                         ;
-; datapath:D0|cout[2]                    ; Merged with datapath:D0|cout[1]        ;
-; datapath:D0|cout[1]                    ; Stuck at GND due to stuck port data_in ;
-; control:C0|current_state~2             ; Lost fanout                            ;
-; control:C0|current_state~3             ; Lost fanout                            ;
-; control:C0|current_state~4             ; Lost fanout                            ;
-; control:C0|current_state~5             ; Lost fanout                            ;
-; Total Number of Removed Registers = 11 ;                                        ;
-+----------------------------------------+----------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                   ;
-+--------------------------+---------------------------+----------------------------------------+
-; Register name            ; Reason for Removal        ; Registers Removed due to This Register ;
-+--------------------------+---------------------------+----------------------------------------+
-; datapath:D0|regcolour[1] ; Stuck at GND              ; datapath:D0|cout[1]                    ;
-;                          ; due to stuck port data_in ;                                        ;
-+--------------------------+---------------------------+----------------------------------------+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; datapath:D0|regcolour[0]              ; Stuck at GND due to stuck port data_in ;
+; datapath:D0|regcolour[1,2]            ; Stuck at VCC due to stuck port data_in ;
+; datapath:D0|Xorigin[7]                ; Stuck at GND due to stuck port data_in ;
+; clk                                   ; Merged with go                         ;
+; control:C0|current_state~2            ; Lost fanout                            ;
+; control:C0|current_state~3            ; Lost fanout                            ;
+; control:C0|current_state~4            ; Lost fanout                            ;
+; control:C0|current_state~5            ; Lost fanout                            ;
+; Total Number of Removed Registers = 9 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -333,12 +341,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 142   ;
-; Number of registers using Synchronous Clear  ; 70    ;
-; Number of registers using Synchronous Load   ; 15    ;
+; Total registers                              ; 149   ;
+; Number of registers using Synchronous Clear  ; 55    ;
+; Number of registers using Synchronous Load   ; 33    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 70    ;
+; Number of registers using Clock Enable       ; 76    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -348,24 +356,25 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; trigger                                ; 9       ;
+; trigger                                ; 8       ;
 ; go                                     ; 11      ;
 ; Total number of inverted registers = 2 ;         ;
 +----------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------+
-; 3:1                ; 15 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |main|datapath:D0|counterBlack[0]                                                                       ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |main|datapath:D0|yout[4]                                                                               ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |main|vga_adapter:VGA|vga_controller:controller|yCounter[7]                                             ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |main|xin[6]                                                                                            ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |main|yin[4]                                                                                            ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |main|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3|result_node[0] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |main|datapath:D0|counterBlack[11]                                                                                 ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |main|datapath:D0|yout[4]                                                                                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |main|vga_adapter:VGA|vga_controller:controller|yCounter[7]                                                        ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |main|xin[6]                                                                                                       ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |main|yin[6]                                                                                                       ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |main|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3|result_node[1]            ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |main|datapath:D0|ram:u|altsyncram:altsyncram_component|altsyncram_qdo1:auto_generated|mux_ifb:mux2|result_node[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------+
@@ -375,6 +384,15 @@ Encoding Type:  One-Hot
 +---------------------------------+--------------------+------+--------------------------------+
 ; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                              ;
 +---------------------------------+--------------------+------+--------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Source assignments for datapath:D0|ram:u|altsyncram:altsyncram_component|altsyncram_qdo1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                        ;
++---------------------------------+--------------------+------+-------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                         ;
++---------------------------------+--------------------+------+-------------------------------------------+
 
 
 +--------------------------------------------------------------+
@@ -865,24 +883,96 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                   ;
-+-------------------------------------------+----------------------------------------+
-; Name                                      ; Value                                  ;
-+-------------------------------------------+----------------------------------------+
-; Number of entity instances                ; 1                                      ;
-; Entity Instance                           ; vga_adapter:VGA|altsyncram:VideoMemory ;
-;     -- OPERATION_MODE                     ; DUAL_PORT                              ;
-;     -- WIDTH_A                            ; 3                                      ;
-;     -- NUMWORDS_A                         ; 19200                                  ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                           ;
-;     -- WIDTH_B                            ; 3                                      ;
-;     -- NUMWORDS_B                         ; 19200                                  ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                 ;
-;     -- OUTDATA_REG_B                      ; CLOCK1                                 ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                   ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                              ;
-+-------------------------------------------+----------------------------------------+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:D0|ram:u|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+------------------------------------+
+; Parameter Name                     ; Value                ; Type                               ;
++------------------------------------+----------------------+------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                            ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                         ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                       ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                       ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                     ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                            ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                            ;
+; WIDTH_A                            ; 3                    ; Signed Integer                     ;
+; WIDTHAD_A                          ; 15                   ; Signed Integer                     ;
+; NUMWORDS_A                         ; 19200                ; Signed Integer                     ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                            ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                            ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                            ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                            ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                            ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                            ;
+; WIDTH_B                            ; 1                    ; Untyped                            ;
+; WIDTHAD_B                          ; 1                    ; Untyped                            ;
+; NUMWORDS_B                         ; 1                    ; Untyped                            ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                            ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                            ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                            ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                            ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                            ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                            ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                            ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                            ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                            ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                            ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                            ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                            ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                     ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                            ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                            ;
+; BYTE_SIZE                          ; 8                    ; Untyped                            ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                            ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                            ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                            ;
+; INIT_FILE                          ; black.mif            ; Untyped                            ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                            ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                            ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                            ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                            ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                            ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                            ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                            ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                            ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                            ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                            ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                            ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                            ;
+; CBXI_PARAMETER                     ; altsyncram_qdo1      ; Untyped                            ;
++------------------------------------+----------------------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                              ;
++-------------------------------------------+---------------------------------------------------+
+; Name                                      ; Value                                             ;
++-------------------------------------------+---------------------------------------------------+
+; Number of entity instances                ; 2                                                 ;
+; Entity Instance                           ; vga_adapter:VGA|altsyncram:VideoMemory            ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                         ;
+;     -- WIDTH_A                            ; 3                                                 ;
+;     -- NUMWORDS_A                         ; 19200                                             ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                      ;
+;     -- WIDTH_B                            ; 3                                                 ;
+;     -- NUMWORDS_B                         ; 19200                                             ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                            ;
+;     -- OUTDATA_REG_B                      ; CLOCK1                                            ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                              ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                         ;
+; Entity Instance                           ; datapath:D0|ram:u|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                       ;
+;     -- WIDTH_A                            ; 3                                                 ;
+;     -- NUMWORDS_A                         ; 19200                                             ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                      ;
+;     -- WIDTH_B                            ; 1                                                 ;
+;     -- NUMWORDS_B                         ; 1                                                 ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                            ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                      ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                              ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                         ;
++-------------------------------------------+---------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------+
@@ -902,14 +992,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+-------------------------------------------------------+
 
 
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:D0|ram:u"                                                                                                                                                                      ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; data       ; Input ; Warning  ; Input port expression (15 bits) is wider than the input port (3 bits) it drives.  The 12 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; data[2..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; wren       ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +------------------------------------------------+
 ; Port Connectivity Checks: "datapath:D0"        ;
 +--------------+-------+----------+--------------+
 ; Port         ; Type  ; Severity ; Details      ;
 +--------------+-------+----------+--------------+
 ; resetn       ; Input ; Info     ; Stuck at VCC ;
-; colour[2..1] ; Input ; Info     ; Stuck at GND ;
-; colour[0]    ; Input ; Info     ; Stuck at VCC ;
+; colour[2..1] ; Input ; Info     ; Stuck at VCC ;
+; colour[0]    ; Input ; Info     ; Stuck at GND ;
 +--------------+-------+----------+--------------+
 
 
@@ -947,36 +1048,36 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 142                         ;
-;     ENA               ; 30                          ;
-;     ENA SCLR          ; 25                          ;
-;     ENA SLD           ; 15                          ;
+; arriav_ff             ; 149                         ;
+;     ENA               ; 33                          ;
+;     ENA SCLR          ; 10                          ;
+;     ENA SLD           ; 33                          ;
 ;     SCLR              ; 45                          ;
-;     plain             ; 27                          ;
-; arriav_lcell_comb     ; 188                         ;
+;     plain             ; 28                          ;
+; arriav_lcell_comb     ; 198                         ;
 ;     arith             ; 99                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 82                          ;
 ;         2 data inputs ; 16                          ;
-;     normal            ; 69                          ;
+;     normal            ; 79                          ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 8                           ;
-;         3 data inputs ; 11                          ;
-;         4 data inputs ; 9                           ;
-;         5 data inputs ; 19                          ;
-;         6 data inputs ; 19                          ;
+;         2 data inputs ; 11                          ;
+;         3 data inputs ; 10                          ;
+;         4 data inputs ; 10                          ;
+;         5 data inputs ; 23                          ;
+;         6 data inputs ; 22                          ;
 ;     shared            ; 20                          ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 4                           ;
 ;         2 data inputs ; 12                          ;
 ;         3 data inputs ; 2                           ;
-; boundary_port         ; 40                          ;
+; boundary_port         ; 43                          ;
 ; generic_pll           ; 1                           ;
-; stratixv_ram_block    ; 9                           ;
+; stratixv_ram_block    ; 18                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.60                        ;
-; Average LUT depth     ; 2.01                        ;
+; Average LUT depth     ; 1.95                        ;
 +-----------------------+-----------------------------+
 
 
@@ -985,7 +1086,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -995,33 +1096,33 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Nov 03 21:50:09 2019
+    Info: Processing started: Thu Nov 14 00:51:08 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off main -c main
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file mainusb.v
-    Info (12023): Found entity 1: main File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/mainusb.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_pll.v
-    Info (12023): Found entity 1: vga_pll File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/vga_adapter/vga_pll.v Line: 36
+    Info (12023): Found entity 1: vga_pll File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/vga_adapter/vga_pll.v Line: 36
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_controller.v
-    Info (12023): Found entity 1: vga_controller File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/vga_adapter/vga_controller.v Line: 9
+    Info (12023): Found entity 1: vga_controller File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/vga_adapter/vga_controller.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_address_translator.v
-    Info (12023): Found entity 1: vga_address_translator File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/vga_adapter/vga_address_translator.v Line: 4
+    Info (12023): Found entity 1: vga_address_translator File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/vga_adapter/vga_address_translator.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_adapter.v
-    Info (12023): Found entity 1: vga_adapter File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/vga_adapter/vga_adapter.v Line: 78
+    Info (12023): Found entity 1: vga_adapter File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/vga_adapter/vga_adapter.v Line: 78
 Info (12021): Found 3 design units, including 3 entities, in source file main.v
-    Info (12023): Found entity 1: main2 File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/main.v Line: 1
-    Info (12023): Found entity 2: control File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/main.v Line: 182
-    Info (12023): Found entity 3: datapath File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/main.v Line: 268
+    Info (12023): Found entity 1: main File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/main.v Line: 1
+    Info (12023): Found entity 2: control File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/main.v Line: 195
+    Info (12023): Found entity 3: datapath File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/main.v Line: 281
+Info (12021): Found 1 design units, including 1 entities, in source file ram.v
+    Info (12023): Found entity 1: ram File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/ram.v Line: 39
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at mainusb.v(53): truncated value with size 32 to match size of target (27) File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/mainusb.v Line: 53
-Warning (10230): Verilog HDL assignment warning at mainusb.v(60): truncated value with size 32 to match size of target (8) File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/mainusb.v Line: 60
-Warning (10230): Verilog HDL assignment warning at mainusb.v(62): truncated value with size 32 to match size of target (4) File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/mainusb.v Line: 62
-Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/mainusb.v Line: 155
-Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/vga_adapter/vga_adapter.v Line: 192
-Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/vga_adapter/vga_adapter.v Line: 213
-Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|altsyncram:VideoMemory" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/vga_adapter/vga_adapter.v Line: 213
-Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory" with the following parameter: File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/vga_adapter/vga_adapter.v Line: 213
+Warning (10230): Verilog HDL assignment warning at main.v(54): truncated value with size 32 to match size of target (27) File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/main.v Line: 54
+Warning (10230): Verilog HDL assignment warning at main.v(61): truncated value with size 32 to match size of target (8) File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/main.v Line: 61
+Warning (10230): Verilog HDL assignment warning at main.v(63): truncated value with size 32 to match size of target (4) File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/main.v Line: 63
+Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/main.v Line: 156
+Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/vga_adapter/vga_adapter.v Line: 192
+Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/vga_adapter/vga_adapter.v Line: 213
+Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|altsyncram:VideoMemory" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/vga_adapter/vga_adapter.v Line: 213
+Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory" with the following parameter: File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/vga_adapter/vga_adapter.v Line: 213
     Info (12134): Parameter "WIDTH_A" = "3"
     Info (12134): Parameter "WIDTH_B" = "3"
     Info (12134): Parameter "INTENDED_DEVICE_FAMILY" = "Cyclone II"
@@ -1038,21 +1139,21 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory"
     Info (12134): Parameter "POWER_UP_UNINITIALIZED" = "FALSE"
     Info (12134): Parameter "INIT_FILE" = "black.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_m6m1.tdf
-    Info (12023): Found entity 1: altsyncram_m6m1 File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/db/altsyncram_m6m1.tdf Line: 33
+    Info (12023): Found entity 1: altsyncram_m6m1 File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/db/altsyncram_m6m1.tdf Line: 33
 Info (12128): Elaborating entity "altsyncram_m6m1" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_7la.tdf
-    Info (12023): Found entity 1: decode_7la File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/db/decode_7la.tdf Line: 22
-Info (12128): Elaborating entity "decode_7la" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_7la:decode2" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/db/altsyncram_m6m1.tdf Line: 46
+    Info (12023): Found entity 1: decode_7la File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/db/decode_7la.tdf Line: 22
+Info (12128): Elaborating entity "decode_7la" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_7la:decode2" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/db/altsyncram_m6m1.tdf Line: 46
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_01a.tdf
-    Info (12023): Found entity 1: decode_01a File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/db/decode_01a.tdf Line: 22
-Info (12128): Elaborating entity "decode_01a" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_01a:rden_decode_b" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/db/altsyncram_m6m1.tdf Line: 47
+    Info (12023): Found entity 1: decode_01a File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/db/decode_01a.tdf Line: 22
+Info (12128): Elaborating entity "decode_01a" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_01a:rden_decode_b" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/db/altsyncram_m6m1.tdf Line: 47
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ifb.tdf
-    Info (12023): Found entity 1: mux_ifb File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/db/mux_ifb.tdf Line: 22
-Info (12128): Elaborating entity "mux_ifb" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/db/altsyncram_m6m1.tdf Line: 49
-Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_adapter:VGA|vga_pll:mypll" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/vga_adapter/vga_adapter.v Line: 231
-Info (12128): Elaborating entity "altpll" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/vga_adapter/vga_pll.v Line: 53
-Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/vga_adapter/vga_pll.v Line: 53
-Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" with the following parameter: File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/vga_adapter/vga_pll.v Line: 53
+    Info (12023): Found entity 1: mux_ifb File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/db/mux_ifb.tdf Line: 22
+Info (12128): Elaborating entity "mux_ifb" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/db/altsyncram_m6m1.tdf Line: 49
+Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_adapter:VGA|vga_pll:mypll" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/vga_adapter/vga_adapter.v Line: 231
+Info (12128): Elaborating entity "altpll" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/vga_adapter/vga_pll.v Line: 53
+Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/vga_adapter/vga_pll.v Line: 53
+Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" with the following parameter: File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/vga_adapter/vga_pll.v Line: 53
     Info (12134): Parameter "operation_mode" = "NORMAL"
     Info (12134): Parameter "intended_device_family" = "Cyclone II"
     Info (12134): Parameter "lpm_type" = "altpll"
@@ -1065,15 +1166,40 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:al
     Info (12134): Parameter "clk0_multiply_by" = "1"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altpll_80u.tdf
-    Info (12023): Found entity 1: altpll_80u File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/db/altpll_80u.tdf Line: 25
+    Info (12023): Found entity 1: altpll_80u File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/db/altpll_80u.tdf Line: 25
 Info (12128): Elaborating entity "altpll_80u" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
-Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/vga_adapter/vga_adapter.v Line: 262
-Info (12128): Elaborating entity "control" for hierarchy "control:C0" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/mainusb.v Line: 173
-Warning (10270): Verilog HDL Case Statement warning at main.v(226): incomplete case statement has no default case item File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/main.v Line: 226
-Info (10264): Verilog HDL Case Statement information at main.v(226): all case item expressions in this case statement are onehot File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/main.v Line: 226
-Info (12128): Elaborating entity "datapath" for hierarchy "datapath:D0" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/mainusb.v Line: 191
+Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/vga_adapter/vga_adapter.v Line: 262
+Info (12128): Elaborating entity "control" for hierarchy "control:C0" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/main.v Line: 174
+Warning (10270): Verilog HDL Case Statement warning at main.v(239): incomplete case statement has no default case item File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/main.v Line: 239
+Info (10264): Verilog HDL Case Statement information at main.v(239): all case item expressions in this case statement are onehot File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/main.v Line: 239
+Info (12128): Elaborating entity "datapath" for hierarchy "datapath:D0" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/main.v Line: 192
+Info (12128): Elaborating entity "ram" for hierarchy "datapath:D0|ram:u" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/main.v Line: 326
+Info (12128): Elaborating entity "altsyncram" for hierarchy "datapath:D0|ram:u|altsyncram:altsyncram_component" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/ram.v Line: 85
+Info (12130): Elaborated megafunction instantiation "datapath:D0|ram:u|altsyncram:altsyncram_component" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/ram.v Line: 85
+Info (12133): Instantiated megafunction "datapath:D0|ram:u|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/ram.v Line: 85
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "black.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "19200"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "widthad_a" = "15"
+    Info (12134): Parameter "width_a" = "3"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_qdo1.tdf
+    Info (12023): Found entity 1: altsyncram_qdo1 File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/db/altsyncram_qdo1.tdf Line: 33
+Info (12128): Elaborating entity "altsyncram_qdo1" for hierarchy "datapath:D0|ram:u|altsyncram:altsyncram_component|altsyncram_qdo1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Warning (113018): Width of data items in "black.mif" is greater than the memory width. Truncating data items to fit in memory. File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/black.mif Line: 5
+Critical Warning (127004): Memory depth (19200) in the design file differs from memory depth (76800) in the Memory Initialization File "C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/black.mif" -- truncated remaining initial content value to fit RAM File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/ram.v Line: 85
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/mainusb.v Line: 23
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/main.v Line: 24
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Warning (20013): Ignored 385 assignments for entity "DE1_SoC" -- entity does not exist in design
@@ -1462,35 +1588,27 @@ Warning (20013): Ignored 385 assignments for entity "DE1_SoC" -- entity does not
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[7] -entity DE1_SoC was ignored
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_SYNC_N -entity DE1_SoC was ignored
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS -entity DE1_SoC was ignored
-Info (144001): Generated suppressed messages file C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/output_files/main.map.smsg
+Info (144001): Generated suppressed messages file C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/output_files/main.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 5 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning: RST port on the PLL is not properly connected on instance vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated|generic_pll1. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/db/altpll_80u.tdf Line: 33
+Warning: RST port on the PLL is not properly connected on instance vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated|generic_pll1. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/db/altpll_80u.tdf Line: 33
     Info: Must be connected
-Warning (21074): Design contains 7 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/mainusb.v Line: 17
-    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/mainusb.v Line: 17
-    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/mainusb.v Line: 17
-    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/mainusb.v Line: 17
-    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/mainusb.v Line: 17
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/mainusb.v Line: 17
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/mainusb.v Line: 17
-Info (21057): Implemented 260 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 290 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
-    Info (21059): Implemented 29 output pins
-    Info (21061): Implemented 210 logic cells
-    Info (21064): Implemented 9 RAM segments
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 228 logic cells
+    Info (21064): Implemented 18 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 402 warnings
-    Info: Peak virtual memory: 4867 megabytes
-    Info: Processing ended: Sun Nov 03 21:50:24 2019
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:32
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 397 warnings
+    Info: Peak virtual memory: 4874 megabytes
+    Info: Processing ended: Thu Nov 14 00:51:26 2019
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:37
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_7/Part_3/output_files/main.map.smsg.
+The suppressed messages can be found in C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/Part_3/output_files/main.map.smsg.
 
 
