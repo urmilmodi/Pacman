@@ -40,7 +40,7 @@ module main
     reg [3:0] speedcount;
 
     wire pulse; // 120Hz pulse generated for 1/120 period
-    wire [26:0] timer = 27'b000000001100101101110011010; // 1/120 sec count (120Hz)
+    wire [26:0] timer = 27'b1100101101110011010; // 1/120 sec count (120Hz)
     reg [26:0] counter;
     
     // Generate 120Hz Pulse
@@ -106,7 +106,7 @@ module main
     wire [6:0] y;
     wire plot;
     wire [25:0] central_counter;
-    wire load_background, load_wait, load_block, speed_wait;
+    wire load_background, load_wait, load_block, Erase_Wait;
     wire [2:0] colour;
 	 
 	 wire reset = 1;
@@ -114,6 +114,7 @@ module main
     // Create an Instance of a VGA controller - there can be only one!
     // Define the number of colours as well as the initial background
     // image file (.MIF) for the controller.
+    
     vga_adapter VGA(
             .resetn(reset),
             .clock(CLOCK_50),
@@ -167,24 +168,26 @@ module control(clk, resetn, plot, blockx, blocky, xout, yout, cout);
     reg [25:0] counter = 0;
     reg [2:0] current_state;
     reg [2:0] next_state;
-       
-    parameter Erase_limiter = 26'b1100101101110011010;
-    parameter Background_pixels = 26'b100101100000000;
-    parameter Block_pixels = 5'b10001;
+	 
+    parameter Erase_Delay = 2500000; //50000*delay(in ms)
+    parameter Background_pixels = 19200;
+    parameter Block_pixels = 17;
 
-    localparam  Load_Background = 3'd0,
-                BackgroundtoBlock_Wait = 3'd1,
-                Load_Block = 3'd2,
-                Speed_Wait = 3'd3;
+    localparam  Load_Background        = 0,
+                BackgroundtoBlock_Wait = 1,
+                Load_Block             = 2,
+                Erase_Wait             = 3,
+					 Preset                 = 4;
     
     always@(posedge clk)
     begin: state_table
         case (current_state)
             Load_Background: next_state = (counter > Background_pixels) ? BackgroundtoBlock_Wait : Load_Background;
             BackgroundtoBlock_Wait: next_state = (counter > Background_pixels + 1) ? Load_Block : BackgroundtoBlock_Wait;
-            Load_Block: next_state = (counter > Background_pixels + 1 + Block_pixels) ? Speed_Wait : Load_Block;
-            Speed_Wait: next_state = (counter > Background_pixels + 1 + Block_pixels + Erase_limiter) ? Speed_Wait : Load_Background;
-            default: next_state = Speed_Wait;
+            Load_Block: next_state = (counter > Background_pixels + 1 + Block_pixels) ? Erase_Wait : Load_Block;
+            Erase_Wait: next_state = (counter > Background_pixels + 1 + Block_pixels + Erase_Delay) ? Preset : Erase_Wait;
+				Preset: next_state = Load_Background;
+            default: next_state = Preset;
         endcase
     end
 
@@ -204,108 +207,70 @@ module control(clk, resetn, plot, blockx, blocky, xout, yout, cout);
 	 
 	 // General Address : <width>(counterY + 1) + counterX
 	 
-    rambackground u0(.address((8'd160)*(counterY + 1) + counterX), .clock(clk), .q(backgroundclr), .data(15'b0), .wren(1'b0));
+    rombackground u0(.address((8'd160)*(counterY + 1) + counterX), .clock(clk), .q(backgroundclr));
         
     always@ (negedge clk) begin
         counter = counter + 1;
         
         if (current_state == Load_Background) begin
-				
-				
+			
             xout = counterX;
 			yout = counterY;
-            cout = backgroundclr;
-            plot = 1;
+            cout <= backgroundclr;
+            plot <= 1;
 				
             // Think of Display Setup and this will make sense
             if (counterX == 8'd159) begin
-                counterX = 0;
-                counterY = counterY + 1;
+                counterX <= 0;
+                counterY <= counterY + 1;
             end
             else begin
-				counterX = counterX + 1;
-				end
+				counterX <= counterX + 1;
+			end
         end
         if (current_state == BackgroundtoBlock_Wait) begin
-            plot = 0;
-            Xorigin = blockx;
-            Yorigin = blocky;
+            plot <= 0;
+            Xorigin <= blockx;
+            Yorigin <= blocky;
         end
         if (current_state == Load_Block) begin
             
-            cout = blockclr;
+            cout <= blockclr;
             xout = Xorigin + blockcounter[1:0];
             yout = Yorigin + blockcounter[3:2];
-            plot = 1;
-			blockcounter = blockcounter + 1;
+            plot <= 1;
+			   blockcounter <= blockcounter + 1;
         end
-        if (current_state == Speed_Wait) begin
-            plot = 0;
-            counterX = 0;
-			counterY = 0;
-            blockcounter = 0;
-            if (counter > Background_pixels + 1 + Block_pixels + Erase_limiter) begin
-                counter = 0;
-            end
+        if (current_state == Erase_Wait) begin
+            plot <= 0;
+            counterX <= 0;
+			counterY <= 0;
+            blockcounter <= 0;
         end
+		  if (current_state == Preset) begin
+				counter <= 0;
+				plot <= 0;
+            counterX <= 0;
+			counterY <= 0;
+            blockcounter <= 0;
+		  end
         if (!resetn) begin
-            plot = 0;
-            xout = 0;
-            yout = 0;
-            counterX = 0;
-            counterY = 0;
-            blockcounter = 0;
-            counter = 0;
+            plot <= 0;
+            xout <= 0;
+            yout <= 0;
+            counterX <= 0;
+            counterY <= 0;
+            blockcounter <= 0;
+            counter <= 0;
         end
     end
 
-
-
-                    
     // current_state registers
     always@(posedge clk)
     begin: state_FFs
         if (!resetn)
-            current_state <= Speed_Wait;
+            current_state <= Erase_Wait;
         else
             current_state <= next_state;
     end
-endmodule 
-
-/*
-module datapath(clk, resetn, load_background, load_wait, load_block, speed_wait, plot, blockx, blocky, xout, yout, cout, counter);
-	 
-    input clk;
-    input resetn;
-    input load_background;
-    input load_wait;
-    input load_block;
-    input speed_wait;
-    input [7:0] blockx;
-    input [6:0] blocky;
-
-    output reg [25:0] counter = 0;
-    output reg [7:0] xout;
-    output reg [6:0] yout;
-    output reg [2:0] cout;
-    output reg plot;
-
-    reg [2:0] regcolour;
-    reg [7:0] Xorigin;
-    reg [6:0] Yorigin;
-    reg [3:0] blockcounter;
-    reg [2:0] regBlack;
-    reg [7:0] counterX = 0;
-	reg [6:0] counterY = 0;
-
-    wire [2:0] backgroundclr;
-    wire [2:0] blockclr = 3'b111;
-
-    parameter Erase_limiter = 26'b1100101101110011010;
-    parameter Background_pixels = 26'b100101100000000;
-    parameter Block_pixels = 5'b10001;
-	
-
-    
 endmodule
-*/
