@@ -1,0 +1,176 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/7-58-25th/Ghost_test
+vBlinky
+Z1 !s110 1575319116
+!i10b 1
+!s100 6gS315l][g=R8657=_DNP0
+IL:;aPiVX;@l_zLkNVXF0o3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Game that failed and gave error
+w1574833775
+8Blinky.v
+FBlinky.v
+L0 40
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1575319116.000000
+Z6 !s107 clearRom.v|LeftRightDownData.v|LeftRightData.v|Helper.v|Blinky.v|
+Z7 !s90 -reportprogress|300|Blinky.v|Helper.v|LeftRightData.v|LeftRightDownData.v|clearRom.v|
+!i113 1
+Z8 tCvgOpt 0
+n@blinky
+vclearRom
+R1
+!i10b 1
+!s100 <4@f2BeNEnZJMB0H?k0SO0
+I3Q8YfKN`5UUnJHlPN:^j41
+R2
+R3
+w1574730542
+8clearRom.v
+FclearRom.v
+Z9 L0 39
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+nclear@rom
+vdis
+R1
+!i10b 1
+!s100 lcbXPYUB<Q]S=L2f;FoZa1
+IbkdbQFDCG<hk;P[cPWzgf3
+R2
+R3
+Z10 w1574824402
+Z11 8Helper.v
+Z12 FHelper.v
+L0 56
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+vLeftRightData
+R1
+!i10b 1
+!s100 Be<l@^Ff88^BKNABS6JDO2
+IN>8h^nzi`i[0FR3jMRV_m0
+R2
+R3
+w1574730642
+8LeftRightData.v
+FLeftRightData.v
+R9
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+n@left@right@data
+vLeftRightDownData
+R1
+!i10b 1
+!s100 P?On04><`f0[e?lLfc;LP0
+IbiXm8ZO93am9=f9BKOP2;0
+R2
+R3
+w1574730664
+8LeftRightDownData.v
+FLeftRightDownData.v
+R9
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+n@left@right@down@data
+vLevel
+!s110 1574853125
+!i10b 1
+!s100 EVD97_5Rz688R6`>]jamT0
+I@za<Q`T4HW5PO14m=Sz843
+R2
+R0
+w1574853123
+8Level.v
+FLevel.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1574853125.000000
+!s107 Level.v|
+!s90 Level.v|
+!i113 1
+R8
+n@level
+vminvalue
+R1
+!i10b 1
+!s100 2moGB4LV;nz9CEWJF>^1K0
+I1aDof;n14F>l=hDQUMh0:0
+R2
+R3
+R10
+R11
+R12
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+vrandomDirection
+R1
+!i10b 1
+!s100 D7AAOo3o=6WRBoAF^jIGO2
+Ibbnh5SDFDcIn]DI0@c_Q[1
+R2
+R3
+R10
+R11
+R12
+L0 86
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+nrandom@direction

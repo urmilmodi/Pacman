@@ -1,0 +1,208 @@
+`timescale 1ns / 1ns
+ 
+module Inky
+    (
+        pacloc,
+        pacfacing,
+        blinkyloc,
+        currentloc,
+        currentfacing,
+        clearDirections,
+        mode,
+        rotate,
+        update,
+        nextfacing,
+        nextloc
+    );
+    
+    input [15:0] pacloc;
+    input [15:0] pacfacing;
+    input [15:0] blinkyloc;
+    input [15:0] currentloc;
+    input [3:0] clearDirections;
+    input [3:0] mode; // chase, scatter, frighten, eaten
+    input rotate;
+    input update;
+    input [15:0] currentfacing;
+    output reg [15:0] nextfacing;
+    output reg [15:0] nextloc;
+
+    // No Facing Up needs to be implemented
+
+    reg [15:0] target;
+    reg clearLeft, clearRight, clearUp, clearDown; // Whether moving the direction is possible
+    wire [15:0] randomdir;
+
+    localparam  LEFT          = 16'hFF00,
+                RIGHT         = 16'h0100,
+                DOWN          = 16'h0001,
+                UP            = 16'h00FF,
+                leftindex     = 3,
+                rightindex    = 2,
+                upindex       = 1,
+                downindex     = 0,
+                Chase         = 4'b1000,
+                Scatter       = 4'b0100,
+                Frightened    = 4'b0010,
+                Eaten         = 4'b0001,
+                ScatterTarget = {8'd51, 8'd0}, // Top Left
+                EatenTarget   = {108 - side/2, 120-side}; // Pinky Initial Location
+
+    // Determines Direction Available for travel
+    always@(posedge update) begin
+        clearLeft = 0;
+        clearRight = 0;
+        clearUp = 0;
+        clearDown = 0;
+
+        if (!rotate) begin
+            case(currentfacing)
+                LEFT: begin
+                            clearLeft = clearDirections[leftindex];
+                            clearUp = clearDirections[upindex];
+                            clearDown = clearDirections[downindex];
+                      end
+                RIGHT: begin
+                            clearRight = clearDirections[rightindex];
+                            clearUp = clearDirections[upindex];
+                            clearDown = clearDirections[downindex];
+                       end
+                UP: begin
+                        clearUp = clearDirections[upindex];
+                        clearLeft = clearDirections[leftindex];
+                        clearRight = clearDirections[rightindex];
+                    end
+                DOWN: begin
+                        clearDown = clearDirections[downindex];
+                        clearLeft = clearDirections[leftindex];
+                        clearRight = clearDirections[rightindex];
+                      end
+                //default: //"wtf" somethings wrong
+            endcase
+        end
+        else begin
+            case(currentfacing)
+                LEFT: begin
+                            clearRight = clearDirections[rightindex];
+                            clearUp = clearDirections[upindex];
+                            clearDown = clearDirections[downindex];
+                      end
+                RIGHT: begin
+                            clearLeft = clearDirections[leftindex];
+                            clearUp = clearDirections[upindex];
+                            clearDown = clearDirections[downindex];
+                       end
+                UP: begin
+                        clearDown = clearDirections[downindex];
+                        clearLeft = clearDirections[leftindex];
+                        clearRight = clearDirections[rightindex];
+                    end
+                DOWN: begin
+                        clearUp = clearDirections[upindex];
+                        clearLeft = clearDirections[leftindex];
+                        clearRight = clearDirections[rightindex];
+                      end
+                //default: //"wtf" somethings wrong
+            endcase
+        end
+    end
+
+    // Random Number Generator for Frightened Mode
+    randomDirection u0(clearLeft, clearRight, clearUp, clearDown, update, randomdir);
+
+    // Set Target Position Based on Mode
+    always@(posedge update) begin
+        case(mode)
+            Chase: target = {2*pacloc[15:8] - blinkyloc[15:8], 2*pacloc[7:0] - blinkyloc[7:0]};
+            Scatter: target <= ScatterTarget;
+            Frightened: begin
+                            case(randomdir)
+                                LEFT: target <= currentloc + LEFT; // random number generator of 25% of all directions
+                                RIGHT: target <= currentloc + RIGHT;
+                                UP: target <= currentloc + UP + LEFT;
+                                DOWN: target <= currentloc + DOWN;
+								default: target <= currentloc + LEFT;
+                            endcase
+                        end
+            Eaten: target <= EatenTarget; // The Ghost House
+			default: target <= currentloc + LEFT;
+        endcase
+    end
+
+    // Determine Optimium Path to Target
+    wire [16:0] leftdis;
+    wire [16:0] rightdis;
+    wire [16:0] updis;
+    wire [16:0] downdis;
+    wire [15:0] direction;
+
+    // Determines Distances from using path, if path is not available dis will be a very large value
+    // this will ensure path will not be selected by min
+    dis left(currentloc + LEFT, target, clearLeft, update, leftdis);
+    dis right(currentloc + RIGHT, target, clearRight, update, rightdis);
+    dis up(currentloc + UP + LEFT, target, clearUp, update, updis);
+    dis down(currentloc + DOWN, target, clearDown, update, downdis);
+
+    // Set Direction in the direction with the min distance to target
+    minvalue bestdir(leftdis, rightdis, updis, downdis, update, direction);
+
+    always@(negedge update) begin
+
+        nextfacing = direction;
+        case(mode)
+            Eaten: begin
+                    if (nextfacing == UP)
+                        nextloc = currentloc + nextfacing + LEFT;
+                    else 
+                        nextloc = currentloc + nextfacing;
+                    end
+            Frightened: begin
+                            if (rotate) begin
+                                case(currentfacing)
+                                    LEFT: nextfacing = RIGHT;
+                                    RIGHT: nextfacing = LEFT;
+                                    DOWN: nextfacing = UP;
+                                    UP: nextfacing = DOWN;
+                                endcase
+                            end
+                            if (nextfacing == UP)
+                                nextloc = currentloc + nextfacing + LEFT;
+                            else 
+                                nextloc = currentloc + nextfacing;
+                        end
+            Scatter: begin
+                        if (rotate) begin
+                            case(currentfacing)
+                                LEFT: nextfacing = RIGHT;
+                                RIGHT: nextfacing = LEFT;
+                                DOWN: nextfacing = UP;
+                                UP: nextfacing = DOWN;
+                            endcase
+                        end
+                        if (nextfacing == UP)
+                            nextloc = currentloc + nextfacing + LEFT;
+                        else 
+                            nextloc = currentloc + nextfacing;
+                     end
+            Chase: begin
+                        if (rotate) begin
+                            case(currentfacing)
+                                LEFT: nextfacing = RIGHT;
+                                RIGHT: nextfacing = LEFT;
+                                DOWN: nextfacing = UP;
+                                UP: nextfacing = DOWN;
+                            endcase
+                        end
+                        if (nextfacing == UP)
+                            nextloc = currentloc + nextfacing + LEFT;
+                        else 
+                            nextloc = currentloc + nextfacing;
+                   end
+            default: nextloc = currentloc;
+        endcase
+		  
+        if (randomdir != LEFT && randomdir != RIGHT && randomdir != UP && randomdir != DOWN) begin
+            nextloc = currentloc;
+        end
+    end
+endmodule

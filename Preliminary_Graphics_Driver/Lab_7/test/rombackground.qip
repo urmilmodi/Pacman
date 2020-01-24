@@ -1,0 +1,10 @@
+set_global_assignment -name IP_TOOL_NAME "ROM: 1-PORT"
+set_global_assignment -name IP_TOOL_VERSION "18.1"
+set_global_assignment -name IP_GENERATED_DEVICE_FAMILY "{Cyclone V}"
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) "rombackground.v"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "rombackground.bsf"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "rombackground_inst.v"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "rombackground_bb.v"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "rombackground.inc"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "rombackground.cmp"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "rombackground_syn.v"]

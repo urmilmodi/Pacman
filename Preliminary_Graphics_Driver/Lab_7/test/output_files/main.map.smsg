@@ -1,0 +1,5 @@
+Warning (10268): Verilog HDL information at main_tested.v(56): always construct contains both blocking and non-blocking assignments File: D:/test/Lab_7/test/main_tested.v Line: 56
+Info (10281): Verilog HDL Declaration information at main_tested.v(254): object "load_background" differs only in case from object "Load_Background" in the same scope File: D:/test/Lab_7/test/main_tested.v Line: 254
+Info (10281): Verilog HDL Declaration information at main_tested.v(256): object "load_block" differs only in case from object "Load_Block" in the same scope File: D:/test/Lab_7/test/main_tested.v Line: 256
+Info (10281): Verilog HDL Declaration information at main_tested.v(257): object "speed_wait" differs only in case from object "Speed_Wait" in the same scope File: D:/test/Lab_7/test/main_tested.v Line: 257
+Warning (10268): Verilog HDL information at main_tested.v(365): always construct contains both blocking and non-blocking assignments File: D:/test/Lab_7/test/main_tested.v Line: 365

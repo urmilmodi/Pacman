@@ -1,0 +1,133 @@
+
+State Machine - |main|graphicsNEW:p1|current_state
+Name current_state.Preset current_state.Wait_PAC current_state.Load_PAC current_state.Wait_YELLOW current_state.Load_YELLOW current_state.Wait_PINK current_state.Load_PINK current_state.Wait_RED current_state.Load_RED current_state.Wait_BLUE current_state.Load_BLUE current_state.Wait_FRUIT4 current_state.Load_FRUIT4 current_state.Wait_FRUIT3 current_state.Load_FRUIT3 current_state.Wait_FRUIT2 current_state.Load_FRUIT2 current_state.Wait_FRUIT1 current_state.Load_FRUIT1 current_state.BackgroundtoBlock_Wait current_state.Load_Background 
+current_state.Load_Background 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+current_state.BackgroundtoBlock_Wait 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+current_state.Load_FRUIT1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+current_state.Wait_FRUIT1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+current_state.Load_FRUIT2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+current_state.Wait_FRUIT2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+current_state.Load_FRUIT3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+current_state.Wait_FRUIT3 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+current_state.Load_FRUIT4 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+current_state.Wait_FRUIT4 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+current_state.Load_BLUE 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+current_state.Wait_BLUE 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+current_state.Load_RED 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+current_state.Wait_RED 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+current_state.Load_PINK 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+current_state.Wait_PINK 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+current_state.Load_YELLOW 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+current_state.Wait_YELLOW 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+current_state.Load_PAC 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+current_state.Wait_PAC 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+current_state.Preset 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |main|graphicsNEW:p1|next_state
+Name next_state.Preset next_state.Wait_PAC next_state.Load_PAC next_state.Wait_YELLOW next_state.Load_YELLOW next_state.Wait_PINK next_state.Load_PINK next_state.Wait_RED next_state.Load_RED next_state.Wait_BLUE next_state.Load_BLUE next_state.Wait_FRUIT4 next_state.Load_FRUIT4 next_state.Wait_FRUIT3 next_state.Load_FRUIT3 next_state.Wait_FRUIT2 next_state.Load_FRUIT2 next_state.Wait_FRUIT1 next_state.Load_FRUIT1 next_state.BackgroundtoBlock_Wait next_state.Load_Background 
+next_state.Load_Background 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+next_state.BackgroundtoBlock_Wait 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+next_state.Load_FRUIT1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+next_state.Wait_FRUIT1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+next_state.Load_FRUIT2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+next_state.Wait_FRUIT2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+next_state.Load_FRUIT3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+next_state.Wait_FRUIT3 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+next_state.Load_FRUIT4 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+next_state.Wait_FRUIT4 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+next_state.Load_BLUE 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+next_state.Wait_BLUE 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+next_state.Load_RED 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+next_state.Wait_RED 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+next_state.Load_PINK 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+next_state.Wait_PINK 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+next_state.Load_YELLOW 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+next_state.Wait_YELLOW 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+next_state.Load_PAC 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+next_state.Wait_PAC 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+next_state.Preset 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |main|Level:u0|current_state
+Name current_state.ChaseD current_state.ScatterD current_state.ChaseC current_state.ScatterC current_state.ChaseB current_state.ScatterB current_state.ChaseA current_state.ScatterA current_state.Frightened_State 
+current_state.ScatterA 0 0 0 0 0 0 0 0 0 
+current_state.ChaseA 0 0 0 0 0 0 1 1 0 
+current_state.ScatterB 0 0 0 0 0 1 0 1 0 
+current_state.ChaseB 0 0 0 0 1 0 0 1 0 
+current_state.ScatterC 0 0 0 1 0 0 0 1 0 
+current_state.ChaseC 0 0 1 0 0 0 0 1 0 
+current_state.ScatterD 0 1 0 0 0 0 0 1 0 
+current_state.ChaseD 1 0 0 0 0 0 0 1 0 
+current_state.Frightened_State 0 0 0 0 0 0 0 1 1 
+
+State Machine - |main|Level:u0|Gamemode
+Name Gamemode.Chase Gamemode.Scatter Gamemode.Frightened 
+Gamemode.Frightened 0 0 0 
+Gamemode.Scatter 0 1 1 
+Gamemode.Chase 1 0 1 
+
+State Machine - |main|Level:u0|last_state
+Name last_state.ChaseD last_state.ScatterD last_state.ChaseC last_state.ScatterC last_state.ChaseB last_state.ScatterB last_state.ChaseA last_state.ScatterA last_state.Frightened_State 
+last_state.ScatterA 0 0 0 0 0 0 0 0 0 
+last_state.ChaseA 0 0 0 0 0 0 1 1 0 
+last_state.ScatterB 0 0 0 0 0 1 0 1 0 
+last_state.ChaseB 0 0 0 0 1 0 0 1 0 
+last_state.ScatterC 0 0 0 1 0 0 0 1 0 
+last_state.ChaseC 0 0 1 0 0 0 0 1 0 
+last_state.ScatterD 0 1 0 0 0 0 0 1 0 
+last_state.ChaseD 1 0 0 0 0 0 0 1 0 
+last_state.Frightened_State 0 0 0 0 0 0 0 1 1 
+
+State Machine - |main|Level:u0|next_state
+Name next_state.ChaseD next_state.ScatterD next_state.ChaseC next_state.ScatterC next_state.ChaseB next_state.ScatterB next_state.ChaseA next_state.ScatterA next_state.Frightened_State 
+next_state.ScatterA 0 0 0 0 0 0 0 0 0 
+next_state.ChaseA 0 0 0 0 0 0 1 1 0 
+next_state.ScatterB 0 0 0 0 0 1 0 1 0 
+next_state.ChaseB 0 0 0 0 1 0 0 1 0 
+next_state.ScatterC 0 0 0 1 0 0 0 1 0 
+next_state.ChaseC 0 0 1 0 0 0 0 1 0 
+next_state.ScatterD 0 1 0 0 0 0 0 1 0 
+next_state.ChaseD 1 0 0 0 0 0 0 1 0 
+next_state.Frightened_State 0 0 0 0 0 0 0 1 1 
+
+State Machine - |main|Level:u0|currentPipeLineState
+Name currentPipeLineState.GameModeLogic currentPipeLineState.UpdateLocations currentPipeLineState.gameWait currentPipeLineState.runGhosts currentPipeLineState.Scoring 
+currentPipeLineState.runGhosts 0 0 0 0 0 
+currentPipeLineState.gameWait 0 0 1 1 0 
+currentPipeLineState.UpdateLocations 0 1 0 1 0 
+currentPipeLineState.GameModeLogic 1 0 0 1 0 
+currentPipeLineState.Scoring 0 0 0 1 1 
+
+State Machine - |main|Level:u0|nextPipeLineState
+Name nextPipeLineState.GameModeLogic nextPipeLineState.UpdateLocations nextPipeLineState.gameWait nextPipeLineState.runGhosts nextPipeLineState.Scoring 
+nextPipeLineState.runGhosts 0 0 0 0 0 
+nextPipeLineState.gameWait 0 0 1 1 0 
+nextPipeLineState.UpdateLocations 0 1 0 1 0 
+nextPipeLineState.GameModeLogic 1 0 0 1 0 
+nextPipeLineState.Scoring 0 0 0 1 1 
+
+State Machine - |main|PS2_Controller:keyboard|s_ps2_transceiver
+Name s_ps2_transceiver.PS2_STATE_3_END_TRANSFER s_ps2_transceiver.PS2_STATE_2_COMMAND_OUT s_ps2_transceiver.PS2_STATE_1_DATA_IN s_ps2_transceiver.PS2_STATE_0_IDLE s_ps2_transceiver.PS2_STATE_4_END_DELAYED 
+s_ps2_transceiver.PS2_STATE_0_IDLE 0 0 0 0 0 
+s_ps2_transceiver.PS2_STATE_1_DATA_IN 0 0 1 1 0 
+s_ps2_transceiver.PS2_STATE_2_COMMAND_OUT 0 1 0 1 0 
+s_ps2_transceiver.PS2_STATE_3_END_TRANSFER 1 0 0 1 0 
+s_ps2_transceiver.PS2_STATE_4_END_DELAYED 0 0 0 1 1 
+
+State Machine - |main|PS2_Controller:keyboard|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter
+Name s_ps2_transmitter.PS2_STATE_7_TRANSMISSION_ERROR s_ps2_transmitter.PS2_STATE_6_COMMAND_WAS_SENT s_ps2_transmitter.PS2_STATE_5_RECEIVE_ACK_BIT s_ps2_transmitter.PS2_STATE_4_TRANSMIT_STOP_BIT s_ps2_transmitter.PS2_STATE_3_TRANSMIT_DATA s_ps2_transmitter.PS2_STATE_2_WAIT_FOR_CLOCK s_ps2_transmitter.PS2_STATE_1_INITIATE_COMMUNICATION s_ps2_transmitter.PS2_STATE_0_IDLE 
+s_ps2_transmitter.PS2_STATE_0_IDLE 0 0 0 0 0 0 0 0 
+s_ps2_transmitter.PS2_STATE_1_INITIATE_COMMUNICATION 0 0 0 0 0 0 1 1 
+s_ps2_transmitter.PS2_STATE_2_WAIT_FOR_CLOCK 0 0 0 0 0 1 0 1 
+s_ps2_transmitter.PS2_STATE_3_TRANSMIT_DATA 0 0 0 0 1 0 0 1 
+s_ps2_transmitter.PS2_STATE_4_TRANSMIT_STOP_BIT 0 0 0 1 0 0 0 1 
+s_ps2_transmitter.PS2_STATE_5_RECEIVE_ACK_BIT 0 0 1 0 0 0 0 1 
+s_ps2_transmitter.PS2_STATE_6_COMMAND_WAS_SENT 0 1 0 0 0 0 0 1 
+s_ps2_transmitter.PS2_STATE_7_TRANSMISSION_ERROR 1 0 0 0 0 0 0 1 
+
+State Machine - |main|PS2_Controller:keyboard|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver
+Name s_ps2_receiver.PS2_STATE_3_PARITY_IN s_ps2_receiver.PS2_STATE_2_DATA_IN s_ps2_receiver.PS2_STATE_1_WAIT_FOR_DATA s_ps2_receiver.PS2_STATE_0_IDLE s_ps2_receiver.PS2_STATE_4_STOP_IN 
+s_ps2_receiver.PS2_STATE_0_IDLE 0 0 0 0 0 
+s_ps2_receiver.PS2_STATE_1_WAIT_FOR_DATA 0 0 1 1 0 
+s_ps2_receiver.PS2_STATE_2_DATA_IN 0 1 0 1 0 
+s_ps2_receiver.PS2_STATE_3_PARITY_IN 1 0 0 1 0 
+s_ps2_receiver.PS2_STATE_4_STOP_IN 0 0 0 1 1 

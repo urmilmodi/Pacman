@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at main.v(59): always construct contains both blocking and non-blocking assignments File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/test/main.v Line: 59
+Warning (10268): Verilog HDL information at main.v(259): always construct contains both blocking and non-blocking assignments File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Pacman/Lab_7/test/main.v Line: 259
