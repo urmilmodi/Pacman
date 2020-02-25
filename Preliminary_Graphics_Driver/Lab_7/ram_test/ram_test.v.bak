@@ -1,8 +1,0 @@
-module ram_test(input clk);
-	
-	reg [16:0] addresscounter;
-	wire [23:0] ramout;
-	
-	ram u0 (.address(addresscounter), .q(ramout), .clock(clk));
-
-endmodule
